@@ -22,5 +22,5 @@ mongoose
     )
   )
   .catch((error) => {
-    throw error;
+    console.log(error);
   });

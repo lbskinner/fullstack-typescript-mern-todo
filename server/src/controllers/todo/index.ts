@@ -7,7 +7,7 @@ const getTodos = async (req: Request, res: Response): Promise<void> => {
     const todos: ITodo[] = await Todo.find();
     res.status(200).json({ todos });
   } catch (error) {
-    throw error;
+    console.log(error);
   }
 };
 
@@ -28,7 +28,7 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
       .status(201)
       .json({ message: "Todo added", todo: newTodo, todos: allTodos });
   } catch (error) {
-    throw error;
+    console.log(error);
   }
 };
 
@@ -51,7 +51,7 @@ const updateTodo = async (req: Request, res: Response): Promise<void> => {
       todos: allTodos,
     });
   } catch (error) {
-    throw error;
+    console.log(error);
   }
 };
 
@@ -67,7 +67,7 @@ const deleteTodo = async (req: Request, res: Response): Promise<void> => {
       todos: allTodos,
     });
   } catch (error) {
-    throw error;
+    console.log(error);
   }
 };
 

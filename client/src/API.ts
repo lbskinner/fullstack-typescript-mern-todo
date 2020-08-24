@@ -14,3 +14,23 @@ export const getTodos = async (): Promise<AxiosResponse<ApiDataType>> => {
     throw new Error(error);
   }
 };
+
+export const addTodo = async (
+  formData: ITodo
+): Promise<AxiosResponse<ApiDataType>> => {
+  try {
+    // omit the id because the database, MongoDB in this case, will create an id
+    const todo: Omit<ITodo, "_id"> = {
+      name: formData.name,
+      description: formData.description,
+      status: false,
+    };
+    const saveTodo: AxiosResponse<ApiDataType> = await axios.post(
+      baseUrl + "/add-todo",
+      todo
+    );
+    return saveTodo;
+  } catch (error) {
+    throw new Error(error);
+  }
+};

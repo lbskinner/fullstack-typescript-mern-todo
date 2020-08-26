@@ -6,7 +6,7 @@ const baseUrl: string = "http://localhost:4000";
 export const getTodos = async (): Promise<AxiosResponse<ApiDataType>> => {
   try {
     const todos: AxiosResponse<ApiDataType> = await axios.get(
-      baseUrl + "./todos"
+      baseUrl + "/todos"
     );
     return todos;
   } catch (error) {
@@ -24,6 +24,7 @@ export const addTodo = async (
       description: formData.description,
       status: false,
     };
+
     const saveTodo: AxiosResponse<ApiDataType> = await axios.post(
       baseUrl + "/add-todo",
       todo

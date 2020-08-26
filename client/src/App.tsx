@@ -18,6 +18,8 @@ const App: React.FC = () => {
 
   const handleSaveTodo = (e: React.FormEvent, formData: ITodo): void => {
     e.preventDefault();
+    console.log(e, formData);
+
     addTodo(formData)
       .then(({ status, data }) => {
         if (status !== 201) {

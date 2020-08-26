@@ -10,8 +10,8 @@ const Todo: React.FC<Props> = ({ todo, updateTodo, deleteTodo }) => {
   return (
     <div className="Card">
       <div className="Card--text">
-        <h1>{todo.name}</h1>
-        <span>{todo.description}</span>
+        <h1 className={checkTodo}>{todo.name}</h1>
+        <span className={checkTodo}>{todo.description}</span>
       </div>
       <div className="Card--button">
         <button
